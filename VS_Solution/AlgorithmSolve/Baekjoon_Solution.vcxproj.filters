@@ -108,5 +108,8 @@
     <ClCompile Include="PGS_StringHandlingBasic.cpp">
       <Filter>소스 파일\programmers</Filter>
     </ClCompile>
+    <ClCompile Include="BOJ_1781.cpp">
+      <Filter>소스 파일\BOJ</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
