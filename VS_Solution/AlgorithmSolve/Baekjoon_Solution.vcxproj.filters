@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\BOJ">
       <UniqueIdentifier>{3c8d173c-6b3d-43b0-aeca-984f7a95de01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\programmers\MonthCode_Challenges">
+      <UniqueIdentifier>{fa17d4e3-e55f-4b44-94d6-16eddc491370}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BOJ_1655.cpp">
@@ -110,6 +113,15 @@
     </ClCompile>
     <ClCompile Include="BOJ_1781.cpp">
       <Filter>소스 파일\BOJ</Filter>
+    </ClCompile>
+    <ClCompile Include="PGS_MonthCode_1.cpp">
+      <Filter>소스 파일\programmers\MonthCode_Challenges</Filter>
+    </ClCompile>
+    <ClCompile Include="PGS_MonthCode_2.cpp">
+      <Filter>소스 파일\programmers\MonthCode_Challenges</Filter>
+    </ClCompile>
+    <ClCompile Include="PSG_MonthCode_3.cpp">
+      <Filter>소스 파일\programmers\MonthCode_Challenges</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
