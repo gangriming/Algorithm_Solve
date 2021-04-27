@@ -11,17 +11,39 @@ struct node
 	node* left = nullptr;
 	node* right = nullptr;
 };
-//
-//bool find_node(const node& data, char c) {
-//	return data.name == c;
-//}
+
+void preorder(node* node)
+{
+	if (!node)
+		return;
+	cout << node->name;
+	preorder(node->left);
+	preorder(node->right);
+}
+
+void inorder(node* node)
+{
+	if (!node)
+		return;
+	inorder(node->left);
+	cout << node->name;
+	inorder(node->right);
+}
+
+void postorder(node* node)
+{
+	if (!node)
+		return;
+	postorder(node->left);
+	postorder(node->right);
+	cout << node->name;
+}
 
 int main()
 {
 	int count = 0;
 	cin >> count;
 
-	//list<node> tree;
 	map<char, node> tree;
 
 	for (int i = 0; i < count; ++i)
@@ -29,7 +51,6 @@ int main()
 		char a, b, c;
 		cin >> a >> b >> c;
 
-		// list가 아니라 map으로 map<string, node>를 한다면?
 
 		auto iter = tree.find(a);
 		if (iter == tree.end())	// 없는 노드라면
@@ -91,17 +112,10 @@ int main()
 		}
 	}
 
-	//for (const auto& data : tree)
-	//{
-	//	cout << "나는 노드 " << data.first << endl;
-	//	if(data.second.left)
-	//		cout << "내 왼쪽은" << (data.second.left)->name << endl;
-	//	if (data.second.right)
-	//		cout << "내 오른쪽은" << (data.second.right)->name << endl;
-	//}
-	//cout << endl;
-
 	// 재귀 이용해서 호출만 하면 될듯.
 	// 혹시 맵을 이용하면 안되는 이유가 있는지 짜면서 생각해보자아
 
+	preorder(&tree['A']); cout << endl;
+	inorder(&tree['A']); cout << endl;
+	postorder(&tree['A']);
 }
