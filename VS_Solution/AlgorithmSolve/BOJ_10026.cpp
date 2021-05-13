@@ -110,21 +110,31 @@ int main()
 									b2[iy][ix] = true;
 								}
 								// Debug : B랑 R이 같이 잡혀서 값이 이상함. 조건을 더 세부화 하면 될 듯.
-								else if(search == 'G' && v[iy][ix] == search || v[iy][ix] == 'R')
+								// else if 를 2개 늘려서 해결 했지만, 코드 수를 줄일 수 없을까?
+								else if(search == 'G' && v[iy][ix] == search)
 								{
 									q.push(make_pair(iy, ix));
 									b2[iy][ix] = true;
 								}
-								else if (search == 'R' && v[iy][ix] == search || v[iy][ix] == 'G')
+								else if (search == 'G' && v[iy][ix] == 'R')
+								{
+									q.push(make_pair(iy, ix));
+									b2[iy][ix] = true;
+								}
+								else if (search == 'R' && v[iy][ix] == search)
+								{
+									q.push(make_pair(iy, ix));
+									b2[iy][ix] = true;
+								}
+								else if (search == 'R' && v[iy][ix] == 'G')
 								{
 									q.push(make_pair(iy, ix));
 									b2[iy][ix] = true;
 								}
 							}
-						}
+						}	
 					}
 				}
-				cout << "구획 당 개수 : " << debug << endl;
 			}
 		}
 	}
