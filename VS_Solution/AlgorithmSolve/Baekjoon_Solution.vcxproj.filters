@@ -150,5 +150,11 @@
     <ClCompile Include="PGS_MonthCode2_2.cpp">
       <Filter>소스 파일\programmers\MonthCode_Challenges2</Filter>
     </ClCompile>
+    <ClCompile Include="BOJ_1094.cpp">
+      <Filter>소스 파일\BOJ</Filter>
+    </ClCompile>
+    <ClCompile Include="BOJ_11723.cpp">
+      <Filter>소스 파일\BOJ</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
