@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\programmers\MonthCode_Challenges2">
       <UniqueIdentifier>{93015069-4fbf-4444-ae05-966f784bfdd4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\programmers\Lecture">
+      <UniqueIdentifier>{56680917-3d25-440f-82e3-300a52a80e34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BOJ_1655.cpp">
@@ -206,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="BOJ_10250.cpp">
       <Filter>소스 파일\BOJ</Filter>
+    </ClCompile>
+    <ClCompile Include="PGS_Lecture_1.cpp">
+      <Filter>소스 파일\programmers\Lecture</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
