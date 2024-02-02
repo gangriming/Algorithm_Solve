@@ -5,6 +5,29 @@
 
 using namespace std;
 
+
+
+string solution(vector<string> participant, vector<string> completion) {
+	string answer = "";
+
+	unordered_map<string, int> m;
+
+	for (auto& value : participant)
+		m[value]++;
+	for (auto& value : completion)
+		m[value]--;
+
+	for (auto& value : m)
+	{
+		if (value.second > 0)
+		{
+			answer = value.first;
+			return answer;
+		}
+	}
+	return answer;
+}
+
 int main()
 {
 	vector<string> participant;
@@ -60,3 +83,4 @@ int main()
 
 	return 0;
 }
+
