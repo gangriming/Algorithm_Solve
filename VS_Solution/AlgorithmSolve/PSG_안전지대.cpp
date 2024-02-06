@@ -34,10 +34,10 @@ int solution(vector<vector<int>> board) {
     {
         for (int j = 0; j < board.size(); ++j)
         {
-            cout << board[i][j] << " "; // µð¹ö±ë¿ë
+           // cout << board[i][j] << " "; // µð¹ö±ë¿ë
             if (board[i][j] == 0) answer++;
         }
-       cout << endl;  // µð¹ö±ë¿ë
+       //cout << endl;  // µð¹ö±ë¿ë
     }
 
     return answer;
