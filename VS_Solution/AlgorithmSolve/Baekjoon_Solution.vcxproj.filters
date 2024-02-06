@@ -213,5 +213,17 @@
     <ClCompile Include="PGS_Lecture_1.cpp">
       <Filter>소스 파일\programmers\Lecture</Filter>
     </ClCompile>
+    <ClCompile Include="PGS_Lecture_2.cpp">
+      <Filter>소스 파일\programmers\Lecture</Filter>
+    </ClCompile>
+    <ClCompile Include="PGS_Lecture_3.cpp">
+      <Filter>소스 파일\programmers\Lecture</Filter>
+    </ClCompile>
+    <ClCompile Include="PGS_Lecture_4.cpp">
+      <Filter>소스 파일\programmers\Lecture</Filter>
+    </ClCompile>
+    <ClCompile Include="PSG_ControlZ.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
