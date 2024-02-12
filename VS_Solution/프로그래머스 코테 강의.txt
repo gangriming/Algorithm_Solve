@@ -43,3 +43,21 @@
 4-2.
 - string.substr을 이용해서 좀 더 깔끔하고 예쁘게 짤 수 있는 방법 제시.
 
+=====================
+
+5-1. 힙(Heap)
+- 최소/최대 원소를 빠르게 꺼낼 수 있다. -> 힙(heap). 
+	-- max heap
+	-- min heap
+- 힙의 연산
+	- 힙 구성(heapify) [O(NlogN) - N개의 원소를 삽입해서 힙 구성하는데에]
+	- 삽입(insert) [O(logN)]
+	- 삭제(remove) : 최소 / 최대중 삭제. [O(logN)]
+- 힙은 완전 이진 트리로 구현되어있음. --> 배열을 이용해서 구현 가능하다.
+	-- 하지만, 배열로 구현하면, 우선순위 중간인것이 들어가야 하면 인덱스를 다 밀어야해서, 최악의 경우 O(n)이 될 수 있다고 함.
+	-- https://chanhuiseok.github.io/posts/ds-4/
+- 힙의 응용 : 정렬(heapsort), 우선순위 큐(priority queue)
+	--> 우선순위 큐 한번 더 공부하기. 
+
+5-2. 
+-  priority_queue<int, vector<int>, greater<int>> pq;  // less<>이면 max_heap, greater<>면 min_heap

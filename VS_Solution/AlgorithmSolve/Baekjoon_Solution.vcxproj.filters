@@ -243,5 +243,8 @@
     <ClCompile Include="BOJ_2357.cpp">
       <Filter>소스 파일\BOJ</Filter>
     </ClCompile>
+    <ClCompile Include="PGS_Lecture_5.cpp">
+      <Filter>소스 파일\programmers\Lecture</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
