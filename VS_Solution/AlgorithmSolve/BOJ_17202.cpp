@@ -22,7 +22,6 @@ int main()
 
 		for (int i = 0; i < newphone.length()-1; ++i)
 		{
-			//auto num1 = (atoi(&newphone[i]) + atoi(&newphone[i + 1])) % 10;
 			auto num1 = stoi(newphone.substr(i, 1));
 			auto num2 = stoi(newphone.substr(i+1, 1));
 			temp += to_string((num1 + num2) % 10);
