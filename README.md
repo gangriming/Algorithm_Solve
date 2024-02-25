@@ -1,5 +1,7 @@
 # Algorithm_Solve
 백준, 프로그래머스 등등 풀어보고 올리기
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=rimingg_owo)](https://solved.ac/rimingg_owo)
+
 
 `주석등으로 어떤식으로 풀었는지 표기`
 
