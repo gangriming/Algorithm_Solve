@@ -1,101 +1,69 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 
 using namespace std;
 
-pair<int, int> check_pos(string str)
+pair<int, int> check_pos(const string& str) 
 {
-	pair<int, int> a;
-
-	switch (str[0])
-	{
-	case 'A':
-		a.first = 0; break;
-	case 'B':
-		a.first = 1; break;
-	case 'C':
-		a.first = 2; break;
-	case 'D':
-		a.first = 3; break;
-	case 'E':
-		a.first = 4; break;
-	case 'F':
-		a.first = 5; break;
-	case 'G':
-		a.first = 6; break;
-	case 'H':
-		a.first = 7; break;
-	}
-
-	a.second = ((int)(str[1] - '0')) - 1;
-
-	return a;
+    return { str[0] - 'A', str[1] - '1' };
 }
 
-int main()
+// 다시 문자열로 변환
+string pos_to_str(pair<int, int> pos) 
 {
-	std::ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+    return string(1, 'A' + pos.first) + to_string(pos.second + 1);
+}
 
-	string king, stone;
-	cin >> king >> stone;
+// 움직임을 정의
+const unordered_map<string, pair<int, int>> moves = 
+{
+    {"R", {1, 0}}, {"L", {-1, 0}}, {"B", {0, -1}}, {"T", {0, 1}},
+    {"RT", {1, 1}}, {"LT", {-1, 1}}, {"RB", {1, -1}}, {"LB", {-1, -1}}
+};
 
-	int move;
-	cin >> move;
+int main() 
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-	// first = 가로 // second = 세로
-	auto king_pos = check_pos(king);
-	auto stone_pos = check_pos(stone);
+    string king, stone;
+    int move_count;
+    cin >> king >> stone >> move_count;
 
-	//vector<vector<int>> v(8, vector<int>(8, 0));		// 왕이면 1, 돌이면 2
+    auto king_pos = check_pos(king);
+    auto stone_pos = check_pos(stone);
 
-	//v[king_pos.second][king_pos.first] = 1;
-	//v[stone_pos.second][stone_pos.first] = 2;
+    for (int i = 0; i < move_count; ++i) 
+    {
+        string cmd;
+        cin >> cmd;
 
-	while (move--)
-	{
-		string cmd;
-		cin >> cmd;
+        auto move = moves.at(cmd);
+        pair<int, int> new_king_pos = { king_pos.first + move.first, king_pos.second + move.second };
 
-		// 나갈경우는 제외
-		auto temp_king = king_pos;
+        // 킹이 체스판 밖으로 나가는지 확인
+        if (new_king_pos.first < 0 || new_king_pos.first >= 8 ||
+            new_king_pos.second < 0 || new_king_pos.second >= 8) 
+            continue;
 
-		if (cmd == "R")
-		{
-			if (temp_king.first + 1 > 7)
-			{
+        // 킹이 움직인 위치에 돌이 있는 경우
+        if (new_king_pos == stone_pos) 
+        {
+            pair<int, int> new_stone_pos = { stone_pos.first + move.first, stone_pos.second + move.second };
 
-			}
-		}
-		else if (cmd == "L")
-		{
+            // 돌이 체스판 밖으로 나가는지 확인
+            if (new_stone_pos.first < 0 || new_stone_pos.first >= 8 ||
+                new_stone_pos.second < 0 || new_stone_pos.second >= 8) 
+                continue;
 
-		}
-		else if (cmd == "B")
-		{
+            stone_pos = new_stone_pos;
+        }
 
-		}
-		else if (cmd == "T")
-		{
+        king_pos = new_king_pos;
+    }
 
-		}
-		else if (cmd == "RT")
-		{
-
-		}
-		else if (cmd == "LT")
-		{
-
-		}
-		else if (cmd == "RB")
-		{
-
-		}
-		else if (cmd == "LB")
-		{
-
-		}
-	}
+    cout << pos_to_str(king_pos) << "\n" << pos_to_str(stone_pos) << "\n";
 }
